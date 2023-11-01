@@ -1,4 +1,4 @@
-name: Build Minesweeper
+name: Build SpaceWarp
 
 on:
   push:
@@ -57,6 +57,9 @@ jobs:
       #   if: ${{ matrix.isWindows }}
       #   with: 
       #     filepath: './ISS/script.iss'
+
+      - name: Move the resources folder
+        run: mv ./ressources ./dist/ressources
 
       - name: Create Artifact
         uses: actions/upload-artifact@v3
