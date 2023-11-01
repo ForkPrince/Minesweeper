@@ -48,7 +48,7 @@ jobs:
         run: sudo apt-get install libasound2-dev
 
       - name: Install Python Packages
-        run: pip install pygame
+        run: pip install pygame pyinstaller
 
       - name: Build App
         run: pyinstaller Minesweeper.spec
