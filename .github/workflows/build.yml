@@ -7,6 +7,10 @@ on:
 
 permissions: write-all
 
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
 
   build:
@@ -73,3 +77,43 @@ jobs:
         with:
           name: ${{ matrix.arch }}-installer-${{ matrix.build-type }}
           path: ./ISS/Output/
+
+  web:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          repository: ForkPrince/Minesweeper
+          ref: web
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+
+      - name: Install Python Packages
+        run: pip install pygame pygbag
+
+      - name: Build web version
+        run: pygbag ./ --build
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          name: web
+          path: ./build/web
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
+        with:
+          artifact_name: web
