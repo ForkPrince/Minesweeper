@@ -1,15 +1,6 @@
 # Minesweeper
 
-This repository contains the Minesweeper game created by Wam25 and Janavius using Python. 
-
-## Overview
-
-This Minesweeper game implementation offers a classic gaming experience where players can uncover tiles on a grid, avoiding hidden mines. The game provides a challenging yet enjoyable way to test your logical thinking and strategic decision-making skills.
-
-## Features
-
-- **Auto Builds**: This version includes automated builds for a smoother setup process.
-- **Python Implementation**: The game is coded in Python, providing a flexible and accessible codebase for both learning and customization.
+This fork contains automatic builds of [Minesweeper]() for windows, linux and web.
 
 ## How to Download
 
