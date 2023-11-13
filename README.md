@@ -1,5 +1,3 @@
-Sure, here's an improved version of the Minesweeper README:
-
 # Minesweeper
 
 This repository contains the Minesweeper game created by Wam25 and Janavius using Python. 
