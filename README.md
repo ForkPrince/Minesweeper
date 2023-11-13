@@ -1,6 +1,6 @@
 # Minesweeper
 
-This fork contains automatic builds of [Minesweeper]() for windows, linux and web.
+This fork contains automatic builds of [Minesweeper](https://github.com/LMacrini/Minesweeper-Python) for windows, linux and web.
 
 ## How to Download
 
